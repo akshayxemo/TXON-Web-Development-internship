@@ -8,8 +8,15 @@ body{
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     overflow-x: hidden;
+    color: #34344d;
 }
-
+h1,h2,h3,h4,h5{
+  font-family: 'PlayFair Display', serif;
+  font-weight: 900;
+}
+.green{
+  color: #2ECC40;
+}
 /* Navbar Styles */
 
 nav{
@@ -54,7 +61,7 @@ a{
 }
 .navitem a{
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    letter-spacing: 3px;
     font-weight: 600;
     color: #fff;
 }
@@ -128,6 +135,77 @@ a{
 .main{
     width: 100vw;
     height: 5000px;
+}
+.container{
+  width: max(1200px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.about-sec{
+  background-color: #eef1f6;
+  width: 100%;
+}
+.about{
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.sub-title{
+  width: 60%;
+  line-height: 1.5;
+}
+.features-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 25px;
+}
+.f-box{
+  width: 350px;
+  height: 250px;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 30px 30px;
+}
+.f-box:hover{
+  transform: translateY(-20px);
+  transition: 1s ease;
+  box-shadow:
+  0.9px 0.9px 4.7px rgba(0, 0, 0, 0.001),
+  3.1px 3.1px 11.2px rgba(0, 0, 0, 0),
+  7.6px 7.6px 21.2px rgba(0, 0, 0, 0.001),
+  16.3px 16.3px 37.7px rgba(0, 0, 0, 0.003),
+  35.7px 35.7px 70.6px rgba(0, 0, 0, 0.01),
+  100px 100px 169px rgba(0, 0, 0, 0.04);
+}
+.f-box-icon{
+  aspect-ratio: 4/4;
+  width: 65px;
+  margin-bottom: 5px;
+}
+.f-box-heading{
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.f-box-sub{
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+/* Responsive Media Query */
+
+@media(max-width:680px){
+  .container{
+    width: 100vw;
+  }
 }
 
 /* custome reuseable animation */
