@@ -12,8 +12,8 @@
     <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <nav id="NAV">
-        <div class="logo">QualityF.</div>
+    <nav id="NAV" class="fade-in ">
+        <a href="index.html"><div class="logo">QualityF.</div></a>
         <div class="navbar">
             <ul>
                 <li class="navitem"><a href="index.html">Home</a></li>
@@ -27,12 +27,13 @@
     <section class="header">
         <div class="header-color"></div>
         <div class="header-wrap">
+            <img src="./assets/img/header.jpg" id="h-img">
             <div class="heading-text-wrap">
-                <h1 class="heading">We Serve Quality Food</h1>
-                <p class="sub-title">
+                <h1 class="heading tracking-in-expand">We Serve Quality Food</h1>
+                <p class="sub-title fade-in-bottom ">
                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
                 </p>
-                <button class="btn btn-green">DISCOVER</button>
+                <button class="btn btn-green fade-in-bottom ">DISCOVER</button>
             </div>
         </div>
     </section>
@@ -48,13 +49,19 @@
         }
         function scrollNavFix(){
             const nav = document.getElementById("NAV");
-            if(document.body.scrollTop > 350 || document.documentElement.scrollTop > 350){
+            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+                nav.classList.remove("fade-in");
                 nav.classList.add("fixed");
             }
             else{
                 nav.classList.remove("fixed");
             }
         }
+        const hImg = document.getElementById("h-img");
+        window.addEventListener('scroll',()=>{
+            let value = window.scrollY;
+            hImg.style.top = value * 0.4 + 'px';
+        })
     </script>
 </body>
 </html>

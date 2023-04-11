@@ -9,12 +9,15 @@ body{
     font-size: 1rem;
     overflow-x: hidden;
 }
+
+/* Navbar Styles */
+
 nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 15px 40px;
+    padding: 15px 0px;
     width: 100vw;
     background-color: transparent;
     position: absolute;
@@ -25,6 +28,18 @@ nav{
     top: 0;
     left: 0;
     background-color: rgba(29,29,46,1);
+    animation: navSticky 1s linear;
+}
+@keyframes navSticky {
+    0%{
+        top:-80px;
+    }
+    50%{
+        top:-40px;
+    }
+    100%{
+        top:0px;
+    }
 }
 nav ul{
     list-style: none;
@@ -32,13 +47,19 @@ nav ul{
 .navitem{
     display: inline;
     margin-left: 20px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+}
+a{
+    text-decoration: none;
 }
 .navitem a{
-    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
     color: #fff;
 }
 .navitem a:hover{
+    transition: 0.5s ease;
     color: #2ECC40;
 }
 .logo{
@@ -58,19 +79,25 @@ nav ul{
     mix-blend-mode: darken;
 }
 .header-wrap{
-    background-image: url(../img/header.jpg);
     height: 100vh;
     width: 100vw;
-    background-size: cover;
     overflow: hidden;
 }
-.heading-text-wrap{
+.header-wrap img{
     position: relative;
-    top: 40%;
+    width: 100vw;
+    background-size: cover;
+    object-fit: cover;
+    z-index: -1;
+}
+.heading-text-wrap{
+    position: absolute;
+    top: 35%;
+    left: 25%;
     color: #fff;
     text-align: center;
     width: 50%;
-    margin: auto auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,12 +115,96 @@ nav ul{
     font-size: 0.9rem;
     border-radius: 2px;
     cursor: pointer;
-}
-.btn-green{
     background-color: #2ECC40;
+    border: 2px solid #2ECC40;
     color: #fff;
+}
+.btn:hover{
+    border: 2px solid #2ECC40;
+    background-color: transparent;
+    color: #2ECC40;
+    transition: 0.3s ease-in;
 }
 .main{
     width: 100vw;
     height: 5000px;
+}
+
+/* custome reuseable animation */
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 2.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 2.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .fade-in-bottom {
+	-webkit-animation: fade-in-bottom 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bottom 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+  @-webkit-keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
