@@ -1,11 +1,51 @@
 *{
     box-sizing: border-box;
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    width: 100vw;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(29,29,46,1);
+}
+nav ul{
+    list-style: none;
+}
+.navitem{
+    display: inline;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+.navitem a{
+    text-decoration: none;
+    color: #fff;
+}
+.navitem a:hover{
+    color: #2ECC40;
+}
+.logo{
+    font-family: 'PlayFair Display', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2ECC40;
 }
 .header{
     position: relative;
@@ -15,6 +55,7 @@ body{
     height: 100vh;
     width: 100vw;
     position: absolute;
+    mix-blend-mode: darken;
 }
 .header-wrap{
     background-image: url(../img/header.jpg);
@@ -46,8 +87,13 @@ body{
     border: none;
     font-size: 0.9rem;
     border-radius: 2px;
+    cursor: pointer;
 }
 .btn-green{
     background-color: #2ECC40;
     color: #fff;
+}
+.main{
+    width: 100vw;
+    height: 5000px;
 }

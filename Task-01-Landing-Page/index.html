@@ -12,6 +12,18 @@
     <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <nav id="NAV">
+        <div class="logo">QualityF.</div>
+        <div class="navbar">
+            <ul>
+                <li class="navitem"><a href="index.html">Home</a></li>
+                <li class="navitem"><a href="index.html">Service</a></li>
+                <li class="navitem"><a href="index.html">Menu</a></li>
+                <li class="navitem"><a href="index.html">Testimonial</a></li>
+                <li class="navitem"><a href="index.html">Booking</a></li>
+            </ul>
+        </div>
+    </nav>
     <section class="header">
         <div class="header-color"></div>
         <div class="header-wrap">
@@ -24,5 +36,25 @@
             </div>
         </div>
     </section>
+    <secction class="main-sec">
+        <div class="main"></div>
+    </secction>
+    <footer>
+
+    </footer>
+    <script>
+        window.onscroll = ()=>{
+            scrollNavFix();
+        }
+        function scrollNavFix(){
+            const nav = document.getElementById("NAV");
+            if(document.body.scrollTop > 350 || document.documentElement.scrollTop > 350){
+                nav.classList.add("fixed");
+            }
+            else{
+                nav.classList.remove("fixed");
+            }
+        }
+    </script>
 </body>
 </html>
