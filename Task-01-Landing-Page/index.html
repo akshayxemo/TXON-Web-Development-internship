@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QualityF. Home</title>
+
     <link href="./favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://kit.fontawesome.com/f5e1079434.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav id="NAV" class="fade-in ">
@@ -20,10 +23,10 @@
                 <li class="navitem"><a href="index.html">Home</a></li>
                 <li class="navitem"><a href="index.html">Service</a></li>
                 <li class="navitem"><a href="index.html">Menu</a></li>
-                <li class="navitem"><a href="index.html">Testimonial</a></li>
                 <li class="navitem"><a href="index.html">Booking</a></li>
             </ul>
         </div>
+        <i class="fa-solid fa-bars-staggered collapsed" id="collapsed" style="color:#fff" onclick="ShowHideMenu()"></i>
     </nav>
     <section class="header">
         <div class="header-color"></div>
@@ -32,9 +35,9 @@
             <div class="heading-text-wrap">
                 <h1 class="heading tracking-in-expand">We Serve Quality Food</h1>
                 <p class="fade-in-bottom ">
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
                 </p>
-                <button class="btn btn-green fade-in-bottom ">DISCOVER</button>
+                <button class="btn btn-green fade-in-bottom">DISCOVER</button>
             </div>
         </div>
     </section>
@@ -73,7 +76,7 @@
                     </div>
                     <div class="history-text">
                         <p class="h-heading">Since 1990</p>
-                        <h2 class="h-heading-title"> Read About Our history</h2>
+                        <h2 class="h-heading-title"> About Our history</h2>
                         <hr>
                         <p class="h-text-body">
                             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
@@ -84,17 +87,132 @@
                     </div>
                 </div>
             </div>
+
+            <div class="menu-sec">
+                <div class="container menu-wrap">
+                    <h1>Our Menu</h1>
+                    <div class="menu-item-list">
+                        <div class="menu-item">
+                            <img src="./assets/img/dhosa.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Dhosa</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;80</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/pizza.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Pizza</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;250</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/stir fry noodles.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Stir Fry Noodles</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;120</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/rosted-chicken.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Rosted Chicken</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;150</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/cheeseburgur.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Cheese Burgur</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;50</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/pasta.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Pasta</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;65</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/fried-rice.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Fried Rice</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;80</span></p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/img/fried-fish.png" alt="" class="menu-img">
+                            <h3 class="f-box-heading">Grilled Fish</h3>
+                            <p class="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
+                            <p class="price">Price : <span>&#8377;70</span></p>
+                        </div>
+                    </div>
+                    <button class="btn">See more</button>
+                </div>
+            </div>
+
+            <div class="booking-sec">
+                <img src="./assets/img/food-bg.jpg" alt="" class="booking-bg-img">
+                <div class="colorover">
+                    <div class="container">
+                        <div class="booking-wrap">
+                            <div class="contact-sec">
+                                <h1>Get In Touch With Us</h1>
+                                <hr>
+                                <div class="contacts">
+
+                                    <div class="contact">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-square-phone" style="color: #2ecc40;"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <p class="c-info">90075 56542 | 85442 16654</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact">
+                                        <div class="icon">
+                                            <i class="fa-regular fa-envelope" style="color: #2ecc40;"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <p class="c-info">info@qualityf.in</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot" style="color: #2ecc40;"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <p class="c-info">block b, Lake Town, Kolkata, West Bengal 700089</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="booking">
+                                <form class="booking-form">
+                                    <h2>Booking Form</h2>
+                                    <div class="main-form">
+                                        <input type="text" name="name" id="name" placeholder="Name">
+                                        <input type="email" name="email" id="email" placeholder="Email">
+                                        <input type="text" name="phone" id="phone" placeholder="Phone">
+                                        <input type="text" name="date" id="date" placeholder="Date : i.e. 12 May 2023">
+                                        <input type="text" name="time" id="time" placeholder="Time : i.e. 12:30 AM.">
+                                    </div>
+                                    <button type="submit" class="btn-dark">Reserve Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </secction>
     <footer>
-
+        <p>&#169; TXON Internship Task 01 - Landing Page</p>
     </footer>
     <script>
         window.onscroll = ()=>{
             scrollNavFix();
         }
+        const nav = document.getElementById("NAV");
         function scrollNavFix(){
-            const nav = document.getElementById("NAV");
             if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
                 nav.classList.remove("fade-in");
                 nav.classList.add("fixed");
@@ -108,6 +226,26 @@
             let value = window.scrollY;
             hImg.style.top = value * 0.4 + 'px';
         })
+        const cross = document.getElementById("collapsed-cross");
+        const list = document.getElementById("collapsed");
+        const menu = document.getElementsByClassName("navbar");
+        let count = 0;
+        function ShowHideMenu(){
+            count++;
+            if(count == 1){
+                menu[0].style.top = "0px";
+                menu[0].style.transition = "1s ease"
+                list.classList.remove("fa-bars-staggered");
+                list.classList.add("fa-xmark");
+            }
+            else {
+                menu[0].style.top = "-300px";
+                menu[0].style.transition = "1s ease"
+                list.classList.remove("fa-xmark");
+                list.classList.add("fa-bars-staggered");
+                count = 0;
+            }
+        }
     </script>
 </body>
 </html>
