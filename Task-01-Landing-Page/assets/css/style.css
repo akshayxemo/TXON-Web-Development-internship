@@ -141,8 +141,11 @@ a{
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* About and Feature Section */
+
 .about-sec{
-  background-color: #eef1f6;
+  background-color: #f9f9f9;
   width: 100%;
 }
 .about{
@@ -174,6 +177,7 @@ a{
   background-color: #fff;
   cursor: pointer;
   padding: 30px 30px;
+  border: 0.2px solid #ededed;
 }
 .f-box:hover{
   transform: translateY(-20px);
@@ -199,12 +203,56 @@ a{
   margin-top: 10px;
   line-height: 1.5;
   font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
+
+/* History Section */
+
+.history-sec{
+  background-color: #34344d;
+  height: min(550px);
+  overflow: hidden;
+  color: #fff;
+}
+.history-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 50px;
+}
+.history-text{
+  padding: 100px 30px;
+  width: max(500px);
+}
+.h-heading{
+  color: #2ECC40;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.h-heading-title{
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+hr{
+  width: 100px;
+  margin: 1.4rem 0;
+  border-color: #78788c;
+}
+.h-text-body{
+  line-height: 1.8;
+}
+
 /* Responsive Media Query */
 
 @media(max-width:680px){
   .container{
     width: 100vw;
+  }
+  .history-wrap{
+    flex-wrap: wrap-reverse;
+  }
+  .history-text{
+    padding: 40px 30px;
   }
 }
 
