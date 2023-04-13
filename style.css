@@ -37,10 +37,10 @@ hr{
     font-size: 0.8rem;
     letter-spacing: 6px;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 .duration{
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 .task-sec{
     padding: 2rem 3.5rem;
