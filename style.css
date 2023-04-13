@@ -97,7 +97,6 @@ hr{
     margin-top: 0.5rem;
     color: #78788c;
     font-size: 0.9rem;
-    font-weight: 300;
 }
 footer{
     width: 100%;
@@ -119,5 +118,12 @@ footer{
     .preview-img{
         margin: 0 auto;
         width: 15rem;
+    }
+    .task-date{
+        color: #78788c;
+        font-size: 0.9rem;
+    }
+    .duration{
+        font-size: 0.75rem;
     }
   }
