@@ -93,7 +93,7 @@ hr{
 .desc{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     padding: 2rem;
 }
 .task-date{
