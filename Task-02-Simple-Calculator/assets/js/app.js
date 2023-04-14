@@ -46,7 +46,7 @@ const constEq = (id)=>{
     }
 }
 
-
+//function to delete the last char
 const delEq = ()=>{
     // if the length of the input is greater than 1
     if(rs.innerText.length > 1){
@@ -59,8 +59,10 @@ const delEq = ()=>{
     }
 }
 
+//clear function
 const clearEq = ()=>{
     rs.innerText = "0";
+    eqs.innerText = "0 =";
 }
 
 //function to return precedence of the operator
