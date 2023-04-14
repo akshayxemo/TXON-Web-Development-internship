@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'open-sans',sans-serif;
+    width: 100%;
+    height: min(100vh);
+    background-color: rgba(29,29,46,1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.heading{
+    text-align: center;
+    width: 100%;
+    padding: 2rem 0;
+    color: #fff;
+}
+.heading-text{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Calculator Section */
+
+.container{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.calculator{
+    max-width: 25rem;
+    min-width: auto;
+    padding: 1rem;
+    border: 0.1px solid #78788c;
+    color: #212121;
+}
+.result-and-top{
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: end;
+}
+.eq{
+    color: #5f5f6c;
+}
+.rs{
+    font-size: 2.5rem;
+}
+.operator-operand{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btn{
+    width: 5rem;
+    height: 5rem;
+    color: #78788c;
+    background-color: rgb(43, 43, 67);
+    border: none;
+    flex: 1 0 5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #fff;
+    background-color: rgb(58, 58, 90);
+}
+.btn-g{
+    color: #fff;
+    background: rgb(253,29,29);
+    background: linear-gradient(45deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+}
+.btn-g:hover{
+    font-size: 1.5rem;
+}
+
+/* Footer Section */
+
+footer{
+    width: 100%;
+    padding: 1.2rem;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.link:hover{
+    color: rgb(158, 55, 255);
+}
+
+/* Responsive */
+
+@media(max-width:385px){
+    .btn{
+        width: 4rem;
+        height: 4rem;
+        flex: 1 0 4rem;
+    }
+}
+
+@media(max-width:320px){
+    .btn{
+        width: 3.2rem;
+        height: 3.2rem;
+        flex: 1 0 3.2rem;
+    }
+}
+
+@media(max-width:300px){
+    .btn{
+        width: 3rem;
+        height: 3rem;
+        flex: 1 0 3rem;
+    }
+    .heading-text{
+        font-size: 1.5rem;
+    }
+    .sub-text{
+        font-size: 0.9rem;
+    }
+}

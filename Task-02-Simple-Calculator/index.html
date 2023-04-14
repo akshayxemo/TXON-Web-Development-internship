@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+</head>
+<body>
+    <section class="header-sec">
+        <div class="heading">
+            <h1 class="heading-text">
+                Simple Calculator
+            </h1>
+            <p class="sub-text">
+                Welcome To my Simple Calculator Interface.
+            </p>
+        </div>
+    </section>
+    <section class="calculator-sec">
+        <div class="container">
+            <div class="calculator">
+                <div class="result-and-top">
+                    <p class="eq" id="eq">0 =</p>
+                    <h1 class="rs" id="rs">0</h1>
+                </div>
+                <div class="operator-operand">
+
+                    <button class="btn" id="C" onclick="clearEq()">
+                        C
+                    </button>
+                    <button class="btn" id="%" onclick="constEq(this.id)">
+                        %
+                    </button>
+                    <button class="btn" id="D" onclick="delEq()">
+                        &lArr;
+                    </button>
+                    <button class="btn" id="/" onclick="constEq(this.id)">
+                        /
+                    </button>
+
+                    <button class="btn" id="7" onclick="constEq(this.id)">
+                        7
+                    </button>
+                    <button class="btn" id="8" onclick="constEq(this.id)">
+                        8
+                    </button>
+                    <button class="btn" id="9" onclick="constEq(this.id)">
+                        9
+                    </button>
+                    <button class="btn" id="*" onclick="constEq(this.id)">
+                        *
+                    </button>
+
+                    <button class="btn" id="4" onclick="constEq(this.id)">
+                        4
+                    </button>
+                    <button class="btn" id="5" onclick="constEq(this.id)">
+                        5
+                    </button>
+                    <button class="btn" id="6" onclick="constEq(this.id)">
+                        6
+                    </button>
+                    <button class="btn" id="-" onclick="constEq(this.id)">
+                        -
+                    </button>
+
+                    <button class="btn" id="1" onclick="constEq(this.id)">
+                        1
+                    </button>
+                    <button class="btn" id="2" onclick="constEq(this.id)">
+                        2
+                    </button>
+                    <button class="btn" id="3" onclick="constEq(this.id)">
+                        3
+                    </button>
+                    <button class="btn" id="+" onclick="constEq(this.id)">
+                        +
+                    </button>
+
+                    <button class="btn" id="00" onclick="constEq(this.id)">
+                        00
+                    </button>
+                    <button class="btn" id="0" onclick="constEq(this.id)">
+                        0
+                    </button>
+                    <button class="btn" id="." onclick="constEq(this.id)">
+                        .
+                    </button>
+                    <button class="btn btn-g" id="=">
+                        =
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="footer-text"> &#169; Made By Akshay &nbsp;| &nbsp;<a href="https://www.linkedin.com/in/akshay-kumar-das-945405240/" class="link">My LinkedIn</a></p>
+    </footer>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
