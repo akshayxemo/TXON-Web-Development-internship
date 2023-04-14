@@ -110,12 +110,26 @@ const calcEq = ()=>{
     //creating empty character and operator array
     let cStack = [];
     let opStack = [];
+    let eq = rs.innerText;
+    //if the last character of the equation is not a number but
+    // operator then remove it
+    if(!isNumbers(eq.slice(eq.length-1, eq.length))){
+        eq = eq.slice(0, eq.length-1);
+    }
+
+    //if input is only single digit
+    if(isNumbers(eq)){
+        eqs.innerText = rs.innerText +" =";
+        rs.innerText = eq;
+        return;
+    }
+
     //making the end of sequence by putting "$" at the end of the string.
-    let eq = rs.innerText+"$";
+    eq += "$";
     //initialisation of used variables
     let str = "";
     let i = 0;
-
+    
     //do while loop to calculate the equation
     do{
         if(isNumbers(eq[i]) || eq[i]=="."){
