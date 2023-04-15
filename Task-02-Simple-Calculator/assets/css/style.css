@@ -63,6 +63,24 @@ a{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: stretch;
+    width: 100%;
+}
+.left-side, .right-side{
+    width: 100%;
+}
+.right-side{
+    display: flex;
+    flex-direction: column;
+}
+.right-side>.btn{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.operand{
     flex-wrap: wrap;
 }
 .btn{
@@ -71,7 +89,6 @@ a{
     color: #78788c;
     background-color: rgb(43, 43, 67);
     border: none;
-    flex: 1 0 5rem;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
