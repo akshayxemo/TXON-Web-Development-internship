@@ -55,9 +55,13 @@ a{
 }
 .eq{
     color: #5f5f6c;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 .rs{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 .operator-operand{
     display: flex;

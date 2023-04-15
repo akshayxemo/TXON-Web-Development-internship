@@ -119,9 +119,9 @@ const calcEq = ()=>{
         eq = eq.slice(0, eq.length-1);
     }
 
-    //if input is only single digit
-    if(isNumbers(eq)){
-        eqs.innerText = rs.innerText +" =";
+    //if input is only number
+    if(isNumbers(eq) || isNumbers(eq.split(".").join(""))){
+        eqs.innerText = eq +" =";
         rs.innerText = eq;
         return;
     }
