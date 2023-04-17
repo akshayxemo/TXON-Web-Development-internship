@@ -10,19 +10,24 @@ function isNumbers(str){
 //METHOD TO CONSTRUCT THE EQUATION
 const constEq = (id)=>{
     //if the input is number or ans or "(" or ")"
-    if(isNumbers(id) || id == "Ans" || id == "(" || id ==")"){
+    if(isNumbers(id) || id == "Ans" || id == "(" || id == "√"){
         //if the value of the input field is only 0 which is also length of 1.
         //then just replace the value with id
         if(rs.innerText == "0"){
             rs.innerText = id;
         }
         else{
+            let last = rs.innerText.slice(rs.innerText.length-1, rs.innerText.length);
             //if the input is "(" and last of the equation is a Number then
-            if(id == "(" && isNumbers(rs.innerText.slice(rs.innerText.length-1, rs.innerText.length))){
+            if(id == "(" && isNumbers(last) || last == ")"){
                 rs.innerText += "*"+id;
             }
             //if the input is number but last of equationn is ")" then
-            else if(isNumbers(id) && rs.innerText.slice(rs.innerText.length-1, rs.innerText.length) == ")"){
+            else if(isNumbers(id) && last == ")"){
+                rs.innerText += "*"+id;
+            }
+            //if the input is not "√" and last is number
+            else if(id == "√" && isNumbers(last)){
                 rs.innerText += "*"+id;
             }
             //else if its length 1 but value is not zero then 
@@ -58,8 +63,19 @@ const constEq = (id)=>{
 const delEq = ()=>{
     // if the length of the input is greater than 1
     if(rs.innerText.length > 1){
-        //removing the last character form the input and show the remaining
-        rs.innerText = rs.innerText.slice(0, rs.innerText.length-1);
+        if(rs.innerText == "Syntax Error" || rs.innerText == "Expression Error" || rs.innerText == "Ans" ){
+            rs.innerText = "0";
+        }
+        //if the input has the substring "Ans" and its the last variable then delete "Ans" as a whole
+        else if(rs.innerText.slice(rs.innerText.length-1, rs.innerText.length) == "s"){
+            rs.innerText = rs.innerText.slice(0, rs.innerText.length-1);
+            delEq();
+            delEq();
+        }
+        else{
+            //removing the last character form the input and show the remaining
+            rs.innerText = rs.innerText.slice(0, rs.innerText.length-1);
+        }
     }
     else{
         //if the length is 1 then simply convert it to zero
@@ -89,8 +105,10 @@ function checkPrecedence(sp){
         case "$":
             return 0;
         case "(":
-            return 3;
+            return 4;
         case ")":
+            return 4;
+        case "√":
             return 3;
         default:
             return -1;
@@ -99,8 +117,11 @@ function checkPrecedence(sp){
 
 //METHOD TO CALCULATE TWO NUMBERS WITH GIVEN OPERATOR
 function calcf(num2, num1, operator){
-    console.log(num1)
-    console.log(num2)
+    if(!isNumbers(num1.split(".").join("")) || !isNumbers(num2.split(".").join("")) && operator != "√"){
+        if(operator != "(" || num1 == "Syntax Error"){
+            return "Syntax Error";
+        }
+    }
     switch(operator){
         case "+":
             console.log(num1+" + "+num2+" = "+(parseFloat(num1) + parseFloat(num2)));
@@ -120,6 +141,9 @@ function calcf(num2, num1, operator){
         case "(":
             console.log("( "+num1+" )");
             return parseFloat(num1);
+        case "√":
+            console.log("√"+num1+" = "+Math.sqrt(parseFloat(num1)));
+            return Math.sqrt(parseFloat(num1));
         default:
             return -1;
     }
@@ -234,10 +258,10 @@ const calcEq = ()=>{
 
             if(opStack.length > 0){
                 let result = 0;
+                let top = 0;
                 //if the operator is ) then calculate all until ( reached;
                 if(eq[i] == ")"){
                     console.log("enter")
-                    let top = 0;
                     do{
                         top = opStack.pop();
                         if(top == "("){
@@ -250,18 +274,6 @@ const calcEq = ()=>{
                         console.log("in "+cStack)
                         console.log("in "+opStack)
                     }while(true)
-                    //let top = opStack.pop();
-                    // while(true){
-                    //     if(top != "("){
-                    //         result = calcf(cStack.pop(), cStack.pop(), top);
-                    //         cStack.push(result.toString());
-                    //     }
-                    //     console.log("in "+cStack)
-                    //     console.log("in "+opStack)
-                    //     top = opStack.pop();
-                    //     if(top == "(")
-                    //         break;
-                    // }
                     console.log("out "+cStack)
                     console.log("out "+opStack)
                 }
@@ -270,10 +282,22 @@ const calcEq = ()=>{
                     for(let j = 0; j<= opStack.length-1; j++){
                         if(checkPrecedence(opStack[opStack.length-1]) >= checkPrecedence(eq[i]) && opStack[opStack.length-1] != "("){
                             //calculating the result
+                            console.log("eqi "+eq[i]);
                             console.log(opStack)
                             console.log(cStack)
                             console.log("logic")
-                            result = calcf(cStack.pop().toString(), cStack.pop(), opStack.pop());
+                            top = opStack.pop();
+                            if(top == "√"){
+                                result = calcf("", cStack.pop(), top);
+                            }
+                            else{
+                                let num2 = cStack.pop();
+                                console.log("n2 "+num2);
+                                let num1 = cStack.pop();
+                                console.log("n1 "+num1);
+                                console.log("top "+top);
+                                result = calcf(num2.toString(), num1, top);
+                            }
                             //pushing the new result onto stack
                             cStack.push(result.toString());
                         }
@@ -316,4 +340,13 @@ const calcEq = ()=>{
     //the result lies in the stack top of cStack / character array.
     rs.innerText = cStack.pop();
     ans = rs.innerText;
+}
+function constE(id){
+    console.log(id);
+    if(id == "√"){
+        console.log("true");
+    }
+    else{
+        console.log("false")
+    }
 }
