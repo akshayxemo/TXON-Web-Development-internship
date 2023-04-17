@@ -2,31 +2,31 @@ const rs = document.getElementById("rs");
 const eqs = document.getElementById("eq");
 let ans = 0;
 
-//function to check if the string or character contain number or not
+//METHOD TO CHECK WHEATHER THE STRING IS NUMBER OR NOT
 function isNumbers(str){
     return /^\d+$/.test(str);
 }
 
-//function to construct the equation.
+//METHOD TO CONSTRUCT THE EQUATION
 const constEq = (id)=>{
-    // if(id == "A"){
-    //     id = ans;
-    // }
-    //if the input is number
-    if(isNumbers(id) || id == "Ans" || id == "("){
+    //if the input is number or ans or "(" or ")"
+    if(isNumbers(id) || id == "Ans" || id == "(" || id ==")"){
         //if the value of the input field is only 0 which is also length of 1.
         //then just replace the value with id
         if(rs.innerText == "0"){
             rs.innerText = id;
         }
         else{
+            //if the input is "(" and last of the equation is a Number then
             if(id == "(" && isNumbers(rs.innerText.slice(rs.innerText.length-1, rs.innerText.length))){
-                console.log("yes")
                 rs.innerText += "*"+id;
             }
-            else
+            //if the input is number but last of equationn is ")" then
+            else if(isNumbers(id) && rs.innerText.slice(rs.innerText.length-1, rs.innerText.length) == ")"){
+                rs.innerText += "*"+id;
+            }
             //else if its length 1 but value is not zero then 
-            //concatinate with previous value
+            else
                 rs.innerText += id;
         }
     }
@@ -41,21 +41,20 @@ const constEq = (id)=>{
         else{
             let text = rs.innerText;
             let last = text.slice(text.length-1, text.length);
-            //checking if the last character of the equation is number or "Ans"
-            if(isNumbers(last) || last == "s" || id == ")"){
-                //if number then concatinate
+            //checking if the last char of equation is number or ")" or "s" [if input Ans then last char is "s"]
+            // or input is ")" then
+            if(isNumbers(last) || last == "s" || id == ")" || last == ")"){
                     rs.innerText += id;
             }
             else if(id == "."){
                 //else if input is dot then concatinate 0.[input value]
                 rs.innerText += "0"+id;
             }
-            // this part is here to make sure no operator comes next to another operator
         }
     }
 }
 
-//function to delete the last char
+//METHOD TO DELETE THE EQUATION
 const delEq = ()=>{
     // if the length of the input is greater than 1
     if(rs.innerText.length > 1){
@@ -68,13 +67,13 @@ const delEq = ()=>{
     }
 }
 
-//clear function
+//  CLEAR FUNCTION
 const clearEq = ()=>{
     rs.innerText = "0";
     eqs.innerText = "0";
 }
 
-//function to return precedence of the operator
+//METHOD TO RETURN PRECEDENCE
 function checkPrecedence(sp){
     switch(sp){
         case "+":
@@ -98,7 +97,7 @@ function checkPrecedence(sp){
     }
 }
 
-//function to calculate and return basic arithmetic operation
+//METHOD TO CALCULATE TWO NUMBERS WITH GIVEN OPERATOR
 function calcf(num2, num1, operator){
     console.log(num1)
     console.log(num2)
@@ -118,38 +117,44 @@ function calcf(num2, num1, operator){
         case "%":
             console.log(num1+" % "+num2+" = "+(parseFloat(num1) % parseFloat(num2)));
             return parseFloat(num1) % parseFloat(num2);
+        case "(":
+            console.log("( "+num1+" )");
+            return parseFloat(num1);
         default:
             return -1;
     }
 }
 
-// replace the value of ans with stored value
+// METHOD TO REPLACE THE VALUE OF "Ans" INPUT WITH ITS STORED VALUE
 const Eq = (eq)=>{
+    //replace "Ans" with "#"
     eq = eq.replaceAll("Ans","#");
-    console.log(eq);
     let seq = eq.split("");
     for(let i=1; i<=seq.length-1; i++){
         let j = seq[i-1];
         let k = seq[i];
+        //if "Ans" occurs direct after Number then insert "*" operator between them
         if(isNumbers(j) && k == "#"){
             seq[i] = "*#";
         }
+        //if "Ans" occurs direct before Number then insert "*" operator between them
         else if(isNumbers(k) && j == "#"){
             seq[i-1] = "#*";
         }
+        //if "Ans" occurs direct after "Ans" then add "*" operator between them
         else if(k == "#" && j == "#"){
             seq[i] = "*#";
         }
     }
-    console.log(seq);
+    //reconstruct the equation
     eq = seq.join("");
-    //replace "Ans" with value
+    //replace "#" with value
     eq = eq.replaceAll("#",ans);
     console.log(eq);
     return eq;
 }
 
-//paranthisis check
+//CHECK THE NUMBER OF OCCURANCE OF PERTICULAR CHAR IN A STRING
 function countString(str, letter) {
 
     let count = 0;
@@ -165,6 +170,7 @@ function countString(str, letter) {
     return count;
 }
 
+// MAIN CALCULATION METHOD
 const calcEq = ()=>{
     let eq = rs.innerText;
     //replace "Ans" with value if yes than replace the value of ans
@@ -173,10 +179,14 @@ const calcEq = ()=>{
     }
     //check valid syntax or not
     if(countString(eq,"(") != countString(eq,")")){
-        console.log("count ( "+countString(eq,"("))
-        console.log("Count ) " +countString(eq,")"))
-        rs.innerText = "Syntax Error";
-        return
+        console.log("count ( "+countString(eq,"("));
+        console.log("Count ) " +countString(eq,")"));
+        eqs.innerText = "Syntax Error";
+        return;
+    }
+    if(eq.includes("()")){
+        eqs.innerText = "Expression Error";
+        return;
     }
     console.log(eq);
     //creating empty character and operator array
@@ -224,23 +234,34 @@ const calcEq = ()=>{
 
             if(opStack.length > 0){
                 let result = 0;
-                //console.log("eval"+ eval(eq.replace("$","")))
                 //if the operator is ) then calculate all until ( reached;
                 if(eq[i] == ")"){
                     console.log("enter")
-                    let c = 0
-                    let top = opStack.pop();
-                    while(true){
-                        if(top != "("){
-                            result = calcf(cStack.pop(), cStack.pop(), top);
+                    let top = 0;
+                    do{
+                        top = opStack.pop();
+                        if(top == "("){
+                            result = calcf("", cStack.pop(), top);
                             cStack.push(result.toString());
+                            break;
                         }
+                        result = calcf(cStack.pop(), cStack.pop(), top);
+                        cStack.push(result.toString());
                         console.log("in "+cStack)
                         console.log("in "+opStack)
-                        top = opStack.pop();
-                        if(top == "(")
-                            break;
-                    }
+                    }while(true)
+                    //let top = opStack.pop();
+                    // while(true){
+                    //     if(top != "("){
+                    //         result = calcf(cStack.pop(), cStack.pop(), top);
+                    //         cStack.push(result.toString());
+                    //     }
+                    //     console.log("in "+cStack)
+                    //     console.log("in "+opStack)
+                    //     top = opStack.pop();
+                    //     if(top == "(")
+                    //         break;
+                    // }
                     console.log("out "+cStack)
                     console.log("out "+opStack)
                 }
@@ -257,15 +278,19 @@ const calcEq = ()=>{
                             cStack.push(result.toString());
                         }
                     }
-                    //if the input sequence is $ which is end of sequence
+                    //if the input sequence is $ which is end of sequence or ")"
                     //then it will not insert it to the stack
                     if(eq[i] != "$")
                         opStack.push(eq[i]);
                 }
             }
             else{
-                //if the stack of operator is empty.
-                opStack.push(eq[i]);
+                console.log("empty")
+                if(eq[i] != "$"){
+                    console.log("empty2")
+                    //if the stack of operator is empty.
+                    opStack.push(eq[i]);
+                }
             }
         }
         console.log("final " + opStack)
