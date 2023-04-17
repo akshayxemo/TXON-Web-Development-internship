@@ -279,7 +279,7 @@ const calcEq = ()=>{
                 }
                 else{
                     //for each operator in the stack
-                    for(let j = 0; j<= opStack.length-1; j++){
+                    for(let j = opStack.length-1; j>= 0; j--){
                         if(checkPrecedence(opStack[opStack.length-1]) >= checkPrecedence(eq[i]) && opStack[opStack.length-1] != "("){
                             //calculating the result
                             console.log("eqi "+eq[i]);
@@ -298,9 +298,11 @@ const calcEq = ()=>{
                                 console.log("top "+top);
                                 result = calcf(num2.toString(), num1, top);
                             }
+                            console.log("end")
                             //pushing the new result onto stack
                             cStack.push(result.toString());
                         }
+                        console.log("loop "+opStack)
                     }
                     //if the input sequence is $ which is end of sequence or ")"
                     //then it will not insert it to the stack
