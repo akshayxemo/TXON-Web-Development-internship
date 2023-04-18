@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body{
   width: 100%;
@@ -11,6 +12,7 @@ body{
   background-image: url(../img/Simple\ Shiny.svg);
   font-family: 'open-sans',sans-serif;
   color: #fff;
+  overflow-y: scroll;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
@@ -73,7 +75,10 @@ input{
   background-color: #212121;
   border: 0.1px solid #212121;
 }
-
+/* .displayBox{
+  max-height: 300px;
+  overflow-y: scroll;
+} */
 .heading{
   display: flex;
   justify-content: space-between;
