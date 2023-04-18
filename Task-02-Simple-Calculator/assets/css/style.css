@@ -19,7 +19,7 @@ a{
 .heading{
     text-align: center;
     width: 100%;
-    padding: 2rem 0;
+    padding-top: 2rem;
     color: #fff;
 }
 .heading-text{
@@ -31,27 +31,31 @@ a{
 
 .container{
     width: 100%;
-    padding: 1rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 .calculator{
-    max-width: 25rem;
-    min-width: auto;
-    padding: 1rem;
+    /* min-width: auto;
+    max-width: 27rem; */
     border: 0.1px solid #78788c;
     color: #212121;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.grid-head{
+    grid-area: 1/1/span 2/span 5;
 }
 .result-and-top{
-    width: 100%;
     padding: 1rem;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: end;
+    overflow: hidden;
 }
 .eq{
     color: #5f5f6c;
@@ -63,32 +67,9 @@ a{
     overflow-wrap: break-word;
     max-width: 100%;
 }
-.operator-operand{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: stretch;
-    width: 100%;
-}
-.left-side, .right-side{
-    width: 100%;
-}
-.right-side{
-    display: flex;
-    flex-direction: column;
-}
-.right-side>.btn{
-    width: 100%;
-}
-.row{
-    display: flex;
-    flex-direction: row;
-}
-.operand{
-    flex-wrap: wrap;
-}
 .btn{
-    width: 5rem;
+    max-width: 100%;
+    min-width: 5rem;
     height: 5rem;
     color: #78788c;
     background-color: rgb(43, 43, 67);
@@ -98,10 +79,16 @@ a{
     cursor: pointer;
 }
 .btn:hover{
-    color: #fff;
+    color: rgb(253, 148, 29);
     background-color: rgb(58, 58, 90);
 }
 .btn-g{
+    border: none;
+    font-size: 1.16rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    grid-column: 4/ span 2;
     color: #fff;
     background: rgb(253,29,29);
     background: linear-gradient(45deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
@@ -125,27 +112,29 @@ footer{
 
 /* Responsive */
 
-@media(max-width:385px){
+@media(max-width:390px){
     .btn{
-        width: 4rem;
-        height: 4rem;
-        flex: 1 0 4rem;
+        max-width: 100%;
+        min-width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1rem;
     }
 }
 
 @media(max-width:320px){
     .btn{
-        width: 3.2rem;
-        height: 3.2rem;
-        flex: 1 0 3.2rem;
+        max-width: 100%;
+        min-width: 3.1rem;
+        height: 3.1rem;
     }
 }
 
 @media(max-width:300px){
     .btn{
-        width: 3rem;
+        max-width: 100%;
+        min-width: 3rem;
         height: 3rem;
-        flex: 1 0 3rem;
+        font-size: 0.85rem;
     }
     .heading-text{
         font-size: 1.5rem;

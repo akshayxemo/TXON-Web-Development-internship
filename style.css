@@ -1,3 +1,25 @@
+/* Scrollbar Css */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ff0080;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffff00;
+  }
+  
+/* main html body css*/
+
 *{
     margin: 0;
     padding: 0;
