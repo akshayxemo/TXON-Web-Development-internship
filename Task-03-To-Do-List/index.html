@@ -12,24 +12,47 @@
 </head>
 
 <body>
-  <div class="header">
-    <h2>TO-DO-LIST</h2>
-  </div>
-  <section class="main">
-    <div class="field">
-      <div id="myDiv" class="addList container">
-        <input type="text" name="input" id="input" placeholder="List item...">
-        <button class="btn">Add</button>
+  <section class="main-sec">
+    <div class="container">
+      <div class="input-sec">
+        <h1>TO-DO-LIST</h1>
+        <div class="input-box" >
+          <label for="desc" class="warning display-none" id="title-warning">Title required</label>
+          
+          <input type="text" name="title" id="title" placeholder="Enter the title">
+
+          <label for="desc" class="warning display-none" id="desc-warning">Exceed the character limit 50</label>
+
+          <input type="text" name="desc" id="desc" placeholder="Short description (50 characters)" oninput="countLetter()">
+
+          <button class="btn" onclick="addItem()">Add Item</button>
+
+          <label for="desc" class="count" id="desc-count"></label>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="back-drop-filter">
+        <div class="heading">
+          <p>Title</p>
+          <p>Description</p>
+          <p>Action</p>
+        </div>
+        <div class="displayBox" id="displayBox">
+          <div class="item display-none" id="item-blue-print" onclick="toggleCheck(this.id)">
+            <div class="item-title"> Item Title</div>
+            <div class="item-desc">This is item description.This is item description.</div>
+            <button class="btn-del"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <div class="field">
-    <div class="container info-filter">
-      <span>0 tasks</span>
-      <span class="filter">Filter <i class="fa-solid fa-filter"></i></span>
-    </div>
-  </div>
 
+  <footer>
+    <p class="footer-text"> &#169; Made By Akshay &nbsp;| &nbsp;<a
+            href="https://www.linkedin.com/in/akshay-kumar-das-945405240/" class="link">My LinkedIn</a></p>
+  </footer>
 
   <script src="./assets/js/app.js"></script>
 </body>
