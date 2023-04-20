@@ -39,11 +39,34 @@
           <p>Action</p>
         </div>
         <div class="displayBox" id="displayBox">
-          <div class="item display-none" id="item-blue-print" onclick="toggleCheck(this.id)">
-            <div class="item-title"> Item Title</div>
-            <div class="item-desc">This is item description.This is item description.</div>
-            <button class="btn-del"><i class="fa-solid fa-xmark"></i></button>
+          <!-- Template for task list item -->
+          <div class="display-none" id="item-blue-print" onclick="toggleCheck(this.id)">
+            <!-- item display -->
+            <div class="item">
+              <div class="item-title"> Item Title </div>
+              <div class="item-desc">This is item description.This is item description.</div>
+              <div class="action-btn">
+                <button class="btn-t btn-round btn-edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn-t btn-round btn-del"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+             <!-- end item display -->
+
+            <!-- update form -->
+            <div class="update-form display-none">
+              <div class="inputs">
+                <input type="text" name="title" id="" placeholder="Enter Title">
+                <input type="text" name="desc" id="" placeholder="short description">
+              </div>
+              <div class="action-btn ">
+                <button class="btn-t btn-round btn-edit"><i class="fa-solid fa-check"></i></button>
+                <button class="btn-t btn-round btn-del"><i class="fa-solid fa-arrow-left"></i></button>
+              </div>
+            </div>
+            <!-- end of update form -->
+
           </div>
+          <!-- End of template -->
         </div>
       </div>
     </div>
