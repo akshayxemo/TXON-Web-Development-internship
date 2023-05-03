@@ -13,15 +13,19 @@
 </head>
 <body>
     <nav>
-        <div class="navbar">
-            <div class="logo">AKD@work.</div>
+        <div class="navbar fade-in" id="NAV">
+            <div class="logo"> <a href="index.html">AKD<span>@work.</span></a> </div>
             <div class="nav">
                 <ul class="navlist">
-                    <li class="navitem"><a href="">Home</li>
+                    <li class="navitem"><a href="index.html" class="active">Home</a></li>
                     <li class="navitem"><a href="">About</a></li>
                     <li class="navitem"><a href="">Projects</a></li>
                 </ul>
+                <button class="btn-light-dark" id="btn-light-dark">
+                    <i class="fa-solid fa-sun" id="icon"></i>
+                </button>
             </div>
+            <i class="fa-solid fa-bars-staggered collapsed" id="collapsed" onclick="ShowHideMenu()"></i>
         </div>
     </nav>
     <header>
