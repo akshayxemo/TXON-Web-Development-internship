@@ -33,3 +33,17 @@ function scrollNavFix(){
                 count = 0;
             }
         }
+
+        function changeMode(id) {
+            let element = document.body;
+            element.classList.toggle("dark-mode");
+            let icon = document.getElementById(id);
+            if(icon.classList.value == 'fa-solid fa-sun'){
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
+            }
+            else{
+                icon.classList.add("fa-sun");
+                icon.classList.remove("fa-moon");
+            }
+          }

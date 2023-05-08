@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKDTonic</title>
+    <title>AKD@word</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
@@ -18,10 +18,10 @@
             <div class="nav">
                 <ul class="navlist">
                     <li class="navitem"><a href="index.html" class="active">Home</a></li>
-                    <li class="navitem"><a href="">About</a></li>
+                    <li class="navitem"><a href="#about">About</a></li>
                     <li class="navitem"><a href="">Projects</a></li>
                 </ul>
-                <button class="btn-light-dark" id="btn-light-dark">
+                <button class="btn-light-dark" id="btn-light-dark" onclick="changeMode('icon')">
                     <i class="fa-solid fa-sun" id="icon"></i>
                 </button>
             </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="social-links" id="social-links-header">
                     <a href="https://www.linkedin.com/in/akshay-kumar-das-945405240/" class="link"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshaykrdas001@gmail.com" class="link"><i class="fa-sharp fa-solid fa-envelope"></i></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshaykrdas001@gmail.com" class="link"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://github.com/akshayxemo" class="link"><i class="fa-brands fa-github"></i></a>
                     <!-- <a href="http://" class="link"><i class="fa-brands fa-facebook"></i></a>
                     <a href="http://" class="link"><i class="fa-brands fa-instagram"></i></a> -->
@@ -51,23 +51,32 @@
     </header>
     <section class="about-sec">
         <div class="container">
-            <div class="about-wrap">
-                <div class="text-wrap">
-                    <h1 class="heading">ABOUT</h1>
-                    <hr>
-                    <p>As a passionate learner and creator, I am currently pursuing my MCA degree from the University of Calcutta while also exploring my interests in Web Development and other Technologies. With a deep interest in software and design, I am constantly seeking new opportunities to develop my skills and expand my knowledge.
-                        <br><br>
-                        ➕ In addition to my web development skills, I am also interested in exploring other emerging technologies such as machine learning and blockchain. I believe that a well-rounded understanding of various technologies is essential to stay ahead in the rapidly evolving tech industry. 
-                        <br><br>
-                        I am also a Graphics Designer 🖌️and I have done many freelancing jobs.
-                        <br><br>
-                        My experience in graphics design has allowed me to work with a variety of clients and projects, from creating logos and branding materials to designing websites and social media content. I am skilled in using industry-standard software such as Adobe Photoshop, Illustrator and I have a keen eye for detail and aesthetics.
-                        <br><br>
-                        If you're looking for a dedicated and versatile individual with a passion for innovation and technology and design, I would love to connect with you. Let's explore how we can collaborate and make a difference in the tech industry together.
-                    </p>
-                </div>
-                <div class="image-wrap">
-
+            <div class="about-wrap" id="about">
+                <h1 class="heading">About Me</h1>
+                <div class="info">
+                    <div class="text-wrap">
+                        <p>As a passionate learner and creator, I am currently pursuing my MCA degree from the University of Calcutta while also exploring my interests in Web Development and other Technologies. With a deep interest in software and design, I am constantly seeking new opportunities to develop my skills and expand my knowledge.
+                            <br><br>
+                            ➕ In addition to my web development skills, I am also interested in exploring other emerging technologies such as machine learning and blockchain. I believe that a well-rounded understanding of various technologies is essential to stay ahead in the rapidly evolving tech industry. 
+                            <br><br>
+                            I am also a Graphics Designer 🖌️and I have done many freelancing jobs.
+                            <br><br>
+                            My experience in graphics design has allowed me to work with a variety of clients and projects, from creating logos and branding materials to designing websites and social media content. I am skilled in using industry-standard software such as Adobe Photoshop, Illustrator and I have a keen eye for detail and aesthetics.
+                            <br><br>
+                            If you're looking for a dedicated and versatile individual with a passion for innovation and technology and design, I would love to connect with you. Let's explore how we can collaborate and make a difference in the tech industry together.
+                        </p>
+                    </div>
+                    <div class="details">
+                        <img src="./assets/img/my-image.jpg" alt="#">
+                        <h1 class="highlight">My Details</h1>
+                        <p>Name : Akshay Kumar Das</p>
+                        <p>Gender : Male</p>
+                        <p>DOB : 26 April 2001</p>
+                        <hr>
+                        <p><i class="fa-solid fa-square-phone highlight"></i>&nbsp;&nbsp; 9007998706 | 8777732437</p>
+                        <p><i class="fa-sharp fa-regular fa-envelope highlight"></i>&nbsp;&nbsp; akshaykrdas001@gmail.com</p>
+                        <p><i class="fa-solid fa-location-dot highlight"></i>&nbsp;&nbsp; Kolkata, West Bengal, India</p>
+                    </div>
                 </div>
             </div>
         </div>
