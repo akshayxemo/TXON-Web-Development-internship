@@ -12,14 +12,14 @@
     <script src="https://kit.fontawesome.com/f5e1079434.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <button onclick="topFunction()" id="backToTop" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
     <nav>
         <div class="navbar fade-in" id="NAV">
             <div class="logo"> <a href="index.html">AKD<span>@work.</span></a> </div>
             <div class="nav">
-                <ul class="navlist">
-                    <li class="navitem"><a href="index.html" class="active">Home</a></li>
-                    <li class="navitem"><a href="#about">About</a></li>
-                    <li class="navitem"><a href="">Projects</a></li>
+                <ul class="navlist"> 
+                    <li class="navitem"><a class="item" href="#about-me" id="about">About</a></li>
+                    <li class="navitem"><a class="item" href="#projects" id="project">Projects</a></li>
                 </ul>
                 <button class="btn-light-dark" id="btn-light-dark" onclick="changeMode('icon')">
                     <i class="fa-solid fa-moon" id="icon"></i>
@@ -49,9 +49,9 @@
             </div>
         </div>
     </header>
-    <section class="about-sec">
+    <section class="about-sec" id="about-me">
         <div class="container">
-            <div class="about-wrap" id="about">
+            <div class="about-wrap">
                 <h1 class="heading">About Me</h1>
                 <div class="info">
                     <div class="text-wrap">
@@ -67,27 +67,74 @@
                         </p>
                     </div>
                     <div class="details">
-                        <img src="./assets/img/my-image.jpg" alt="#">
-                        <h1 class="highlight">My Details</h1>
-                        <p>Name : Akshay Kumar Das</p>
-                        <p>Gender : Male</p>
-                        <p>DOB : 26 April 2001</p>
-                        <hr>
-                        <p><i class="fa-solid fa-square-phone highlight"></i>&nbsp;&nbsp; 9007998706 | 8777732437</p>
-                        <p><i class="fa-sharp fa-regular fa-envelope highlight"></i>&nbsp;&nbsp; akshaykrdas001@gmail.com</p>
-                        <p><i class="fa-solid fa-location-dot highlight"></i>&nbsp;&nbsp; Kolkata, West Bengal, India</p>
+                        <div class="d-text">
+                            <img src="./assets/img/my-image.jpg" alt="#">
+                            <h1 class="highlight">My Details</h1>
+                            <p>Name : Akshay Kumar Das</p>
+                            <p>Gender : Male</p>
+                            <p>DOB : 26 April 2001</p>
+                            <hr>
+                            <p><i class="fa-solid fa-square-phone highlight"></i>&nbsp;&nbsp; 9007998706 | 8777732437</p>
+                            <p><i class="fa-sharp fa-regular fa-envelope highlight"></i>&nbsp;&nbsp; akshaykrdas001@gmail.com</p>
+                            <p><i class="fa-solid fa-location-dot highlight"></i>&nbsp;&nbsp; Kolkata, West Bengal, India</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="task-sec">
+    <hr class="center-m">
+    <section class="task-sec" id="projects">
         <div class="task-heading">
             <h2>Projects</h2>
         </div>
         <p class="task-sub-heading">Some of My works that i have created to practice and showcase my skills</p>
         <div class="task-list">
+
+            <!-- Task Box -->
+            <a href="https://github.com/akshayxemo/HomeServiceAgency">
+                <div class="task">
+                    <div class="preview">
+                        <img src="./assets/img/preview/HomeServiceAgency.png" alt=""
+                            class="preview-img">
+                    </div>
+                    <div class="desc">
+                        <h2 class="task-title">HomeServiceAgency</h2>
+                        <p class="task-desc">A full stack web based application for remote home service from different professionals by booking an appointment.</p>
+                        <p class="used-tools">JAVA servlet &nbsp;&#x22C5;&nbsp; JSP &nbsp; &#x22C5; &nbsp; MySql</p>
+                        <p class="used-technology">
+                            <i class="fa-brands fa-java"></i>
+                            <i class="fa-brands fa-square-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3"></i>
+                            <i class="fa-solid fa-database"></i>
+                        </p>
+                        <p class="task-date"><em>01-03-2023</em></p>
+                    </div>
+                </div>
+            </a>
+            <!-- End of Task Box -->
+
+            <!-- Task Box -->
+            <a href="https://akshayxemo.github.io/Temperature-Converter/">
+                <div class="task">
+                    <div class="preview">
+                        <img src="./assets/img/preview/Temperature-converter.png" alt=""
+                            class="preview-img">
+                    </div>
+                    <div class="desc">
+                        <h2 class="task-title">Temperature Converter</h2>
+                        <p class="task-desc">It is a simple Temperature converter to one unit to other in realtime using basic HTML, CSS, JavaScript.</p>
+                        <p class="used-technology">
+                            <i class="fa-brands fa-square-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3"></i>
+                        </p>
+                        <p class="task-date"><em>08-04-2023</em></p>
+                    </div>
+                </div>
+            </a>
+            <!-- End of Task Box -->
 
             <!-- Task Box -->
             <a href="https://akshayxemo.github.io/TXON-Web-Development-internship/Task-01-Landing-Page/index.html">
@@ -97,10 +144,14 @@
                             class="preview-img">
                     </div>
                     <div class="desc">
-                        <span>Task 01</span>
                         <h2 class="task-title">Landing Page</h2>
                         <p class="task-desc">A landing web page using basic HTML, And CSS. This is a very basic project
                             for beginners.</p>
+                        <p class="used-technology">
+                            <i class="fa-brands fa-square-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3"></i>
+                        </p>
                         <p class="task-date"><em>13-04-2023</em></p>
                     </div>
                 </div>
@@ -115,10 +166,14 @@
                             class="preview-img">
                     </div>
                     <div class="desc">
-                        <span>Task 02</span>
                         <h2 class="task-title">Simple Calculator</h2>
                         <p class="task-desc">A Simle Calculator using basic HTML, CSS and JavaScript. This is a very
                             basic project for beginners.</p>
+                            <p class="used-technology">
+                                <i class="fa-brands fa-square-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3"></i>
+                            </p>
                         <p class="task-date"><em>17-04-2023</em></p>
                     </div>
                 </div>
@@ -133,10 +188,34 @@
                             class="preview-img">
                     </div>
                     <div class="desc">
-                        <span>Task 03</span>
                         <h2 class="task-title">To-Do-List</h2>
                         <p class="task-desc">A To-Do-List using basic HTML, CSS and JavaScript. Including CURD Operation.</p>
+                        <p class="used-technology">
+                            <i class="fa-brands fa-square-js"></i>
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3"></i>
+                        </p>
                         <p class="task-date"><em>18-04-2023</em></p>
+                    </div>
+                </div>
+            </a>
+            <!-- End of Task Box -->
+
+            <!-- Task Box -->
+            <a href="https://github.com/akshayxemo/TCP-Client-Server-Socket">
+                <div class="task">
+                    <div class="preview">
+                        <img src="./assets/img/preview/TCP-Chat_System.jpg" alt=""
+                            class="preview-img">
+                    </div>
+                    <div class="desc">
+                        <h2 class="task-title">TCP-Chat-System</h2>
+                        <p class="task-desc">It is a chat-System with Multicast and Broadcast features by using client server architecture and TCP socket programming in C.</p>
+                        <p class="used-tools">TCP &nbsp;&#x22C5;&nbsp; Socket &nbsp; &#x22C5; &nbsp; C</p>
+                        <p class="used-technology">
+                            <i class="fa-solid fa-c"></i>
+                        </p>
+                        <p class="task-date"><em>07-05-2023</em></p>
                     </div>
                 </div>
             </a>

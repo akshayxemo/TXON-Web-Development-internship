@@ -23,14 +23,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     /* outline: 1px solid#53c925; */
 }
 :root{
     --dark: #121314;
+    --over-dark: hsl(232,11%,15%);
     --light: #dadada;
     --highlight: #1e88e5;
-    --primary-font: 'Mulish', sans-serif;;
-    --secondary-font: 'Mulish', sans-serif;;
+    --features: #ffbc2b;
+    --primary-font: 'Mulish', sans-serif;
+    --secondary-font: 'Mulish', sans-serif;
 }
 body{
     background-color: var(--light);
@@ -42,6 +45,10 @@ hr{
     width: 80px;
     margin: 1.5rem 0;
     border: 0.5px solid #4d4d4d;
+}
+.center-m{
+    margin-left: auto ;
+    margin-right: auto;
 }
 h1, h2, h3, h4, h5, h6{
     letter-spacing: 0;
@@ -57,6 +64,31 @@ p{
     color: var(--light);
     background-color: var(--dark);
 }
+
+/* back to top */
+
+#backToTop {
+    display: none;
+    width: 50px;
+    aspect-ratio: 1/1;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: var(--highlight); /* Set a background color */
+    color: var(--light); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 100px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #backToTop:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+  
  /* Navbar style */
 .navbar{
     position: absolute;
@@ -227,14 +259,17 @@ p{
     color: var(--light);
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
     width: 30%;
     overflow: hidden;
-    background-color: var(--dark);
+    background-color: var(--over-dark);
+}
+.d-text{
+    position: relative;
     padding: 1.3rem;
-    border-left: 1px solid #292929;
+    z-index: 2;
 }
 .details img{
+    z-index: -1;
     position: absolute;
     width: 500px;
     left: 0;
@@ -260,9 +295,10 @@ p{
 .task-sec{
     padding: 2rem 3.5rem;
     text-align: center;
+    background-color: var(--dark);
+    color: var(--light);
 }
 .task-heading{
-    font-family: 'open-sans',sans-serif;
     margin-bottom: 0.5rem;
 }
 .task-sub-heading{
@@ -280,11 +316,12 @@ p{
     width: 21.875rem;
     flex: 1;
     height: 100%;
-    background-color: var(--dark);
-    border: 0.1px solid #3d3d3e;
+    background-color: var(--over-dark);
+    /* border: 0.1px solid #3d3d3e; */
     color: var(--light);
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 .preview{
     object-fit: contain;
@@ -321,16 +358,19 @@ p{
     color: #78788c;
     font-size: 0.9rem;
 }
-footer{
+
+.used-technology{
+    display: flex;
     width: 100%;
-    padding: 1.2rem;
-    color: #fff;
-    text-align: center;
-    background-color: rgb(16, 16, 32);
-    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
 }
-.link:hover{
-    color: rgb(158, 55, 255);
+.used-tools{
+    font-size: 0.8rem;
+    color: var(--features);
 }
 /* Responsive */
 
