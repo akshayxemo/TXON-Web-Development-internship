@@ -94,7 +94,7 @@ p{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     padding: 1rem 2rem;
     background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -106,16 +106,38 @@ p{
     align-items: center;
 }
 .btn-light-dark{
-    width: 30px;
+    width: 80px;
+    padding: 2px;
+    border-radius: 80px;
     color: var(--light);
     border: none;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
+    outline: 0.2px solid #3d3d3d;
     background-color: transparent;
     font-size: 1rem;
     cursor: pointer;
+    position: relative;
+    background-color: var(--dark);
 }
 .btn-light-dark:hover{
-    color: var(--highlight);
+    color: var(--features);
+}
+#icon{
+    padding: 8px;
+    width: 34px;
+    border-radius: 20px;
+    background-color: rgba(205, 205, 205, 0.1);
+    aspect-ratio: 1/1;
+    position: relative;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease;
+}
+.slide{
+    background-color: var(--features) !important;
+    color: var(--dark);
 }
 .logo{
     font-weight: 800;
@@ -234,7 +256,29 @@ p{
     font-weight: 800;
     margin-bottom: 1rem;
 }
-
+.input-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    /* color: ; */
+    background-color: white;
+    margin-left: 8px;
+    animation: blink .6s linear infinite;
+}
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 /* about sec styles */
 .about-wrap{
     padding: 100px 0;
@@ -504,7 +548,7 @@ p{
         left: 0;
         background-color: rgba(0, 0, 0, 0.9);
         z-index: -5;
-        padding: 1rem;
+        padding: 1rem 1rem 2rem 1rem;
       }
       .navlist{
         height: 300px;

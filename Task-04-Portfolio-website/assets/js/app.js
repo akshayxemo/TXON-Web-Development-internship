@@ -1,5 +1,6 @@
 window.onscroll = ()=>{
     scrollNavFix();
+    scrollFunction();
 }
 const nav = document.getElementById("NAV");
 function scrollNavFix(){
@@ -38,13 +39,15 @@ function scrollNavFix(){
             let element = document.body;
             element.classList.toggle("dark-mode");
             let icon = document.getElementById(id);
-            if(icon.classList.value == 'fa-solid fa-sun'){
-                icon.classList.remove("fa-sun");
-                icon.classList.add("fa-moon");
+            if(icon.classList.value == 'fa-solid fa-moon slide'){
+                icon.classList.remove("slide");
+                // icon.classList.add("fa-moon");
+                icon.style.left = "0px";
             }
             else{
-                icon.classList.add("fa-sun");
-                icon.classList.remove("fa-moon");
+                icon.classList.add("slide");
+                // icon.classList.remove("fa-moon");
+                icon.style.left = "40px";
             }
           }
 
@@ -52,7 +55,7 @@ function scrollNavFix(){
 let mybutton = document.getElementById("backToTop");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+// window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

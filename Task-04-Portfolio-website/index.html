@@ -21,9 +21,9 @@
                     <li class="navitem"><a class="item" href="#about-me" id="about">About</a></li>
                     <li class="navitem"><a class="item" href="#projects" id="project">Projects</a></li>
                 </ul>
-                <button class="btn-light-dark" id="btn-light-dark" onclick="changeMode('icon')">
+                <div class="btn-light-dark" id="btn-light-dark" onclick="changeMode('icon')">
                     <i class="fa-solid fa-moon" id="icon"></i>
-                </button>
+                </div>
             </div>
             <i class="fa-solid fa-bars-staggered collapsed" id="collapsed" onclick="ShowHideMenu()"></i>
         </div>
@@ -36,7 +36,10 @@
                     <div class="header-text">
                         <h4 class="greeting">Hi I'm</h4>
                         <h1 class="my-name" id="name">Akshay Kumar Das</h1>
-                        <p class="sub-title">I'm a Graphics Designer</p>
+                        <span class="sub-title" id="sentence">I'm a </span>
+                        <span id="feature-text"></span>
+                        <span class="input-cursor"></span>
+                        <!-- <span id="sentence" class="sentence">Convert it to&nbsp;</span> -->
                     </div>
                 </div>
                 <div class="social-links" id="social-links-header">
@@ -244,5 +247,6 @@
         </div>
     </footer>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/animatedText.js"></script>
 </body>
 </html>
